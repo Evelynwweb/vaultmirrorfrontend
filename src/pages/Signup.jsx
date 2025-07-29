@@ -199,7 +199,7 @@ const Signup = async () => {
 
   return (
     <main className='signup-page'>
-        {
+        {/* {
         showServerForm &&
         <div className='server-form-wrapper'>
             <div className="admin-trader-card-delete-btn-container server-close-btn-container" onClick={()=>{ setShowServerForm(false)}}>
@@ -243,12 +243,9 @@ const Signup = async () => {
               <p className="tip">server 3</p>
             </div>
               </div>
-            <button className='server-form-btn' onClick={(e)=>{
-                      e.preventDefault()
-                      Signup()
-        }}>proceed</button>
+            <button className='server-form-btn'>proceed</button>
         </div>
-        }
+        } */}
         {/* <Header /> */}
         {
         loader && 
@@ -346,7 +343,10 @@ const Signup = async () => {
             </div>
           </div>
           <span class="sub">Already have an account ? <Link to="/">Sign in</Link></span>
-          <button type='submit'>Register</button>
+          <button type='submit' onClick={(e)=>{
+                      e.preventDefault()
+                      Signup()
+        }}>Register</button>
         </form>
       </div>}     
     </main>
