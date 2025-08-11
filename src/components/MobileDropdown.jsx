@@ -9,7 +9,7 @@ import { GrTransaction } from "react-icons/gr";
 import {RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
 import { RiLockPasswordLine } from 'react-icons/ri'
-import {FiLogOut} from 'react-icons/fi'
+import {FiLogOut,FiAward} from 'react-icons/fi'
 const MobileDropdown = ({route,showStatus,closeMenu}) => {
      const navigate = useNavigate()
         const [userData, setUserData] = useState()
