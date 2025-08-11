@@ -5,7 +5,6 @@ import {GiReceiveMoney} from 'react-icons/gi'
 import {RxDashboard} from 'react-icons/rx'
 import {  FaRegChartBar } from 'react-icons/fa'
 import { GrLineChart } from "react-icons/gr";
-import { FiAward } from "react-icons/fi";
 import { GrTransaction } from "react-icons/gr";
 import {RiLuggageDepositLine} from 'react-icons/ri'
 import {AiOutlineSetting,AiOutlineStock} from 'react-icons/ai'
@@ -101,6 +100,12 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                 }}>
                     <GrTransaction />
                     <p>Transactions</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/ranking')
+                }}>
+                    <FiAward />
+                    <p>Ranking</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
                     navigate('/withdraw')

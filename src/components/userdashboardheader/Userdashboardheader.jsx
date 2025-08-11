@@ -84,7 +84,12 @@ const Userdashboardheader = ({route}) => {
                           <GrTransaction />
                       </div>
                       <Link to='/transactions'>transactions</Link></li>
-                    
+                    <li className="dashboard-links">
+                      <div className="dashboard-svg-container">
+                          <FiAward />
+                      </div>
+                      <Link to='/ranking'>ranking</Link>
+                    </li>
                     <li className="dashboard-links">
                       <div className="dashboard-svg-container">
                           <AiOutlineSafety />

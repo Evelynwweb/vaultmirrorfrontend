@@ -20,6 +20,7 @@ import UserdashboardCopytrade from './components/userdashboardCopytrade/Userdash
 import UserdashboardKyc from './components/userdashboardKyc/UserdashboardKyc';
 import UserdashboardLiveTrading from './components/userdashboardLiveTrading/UserdashboardLiveTrading';
 import UserdashboardTraders from './components/userdashboardTraders/UserdashboardTraders';
+import UserdashboardRanking from './components/userdashboardRanking/UserdashboardRanking'
 
 function App() {
    useEffect(() => {
@@ -74,7 +75,8 @@ function App() {
             <Route path='/traders' element={<UserdashboardTraders route={route} />}/>
             <Route path='/live-trading' element={<UserdashboardLiveTrading route={route} />}/>
               <Route path='/kyc' element={<UserdashboardKyc route={route} />} />
-              <Route path="/login" element={<Login route={route}/>} />
+              <Route path="/login" element={<Login route={route} />} />
+              <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
           </Routes>
         </motion.div>
       </Router>
