@@ -8,7 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import './userdashboardranking.css'
 import MobileDropdown from '../MobileDropdown'
 
-const UserdashboardRanking = ({route}) => {
+const UserdashboardRanking = ({ route }) => {
+  
   const [userData, setUserData] = useState()
   const [loader, setLoader] = useState(false)
   const [showMobileDropdown,setShowMobileDropdown] = useState(false)
