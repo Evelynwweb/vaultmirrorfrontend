@@ -11,34 +11,6 @@ import Swal from 'sweetalert2'
 const PasswordReset = ({ route }) => {
     const params = useParams()
     const [email, setEmail] = useState(params.email)
-    
-        useEffect(() => {
-            setLoader(true)
-            const verifyEmailUrl = async()=>{
-                try {
-                    
-                    const url = `${route}/resetpassword/${params.email}`
-                    const req = await fetch(url,{
-                        headers:{
-                            'Content-Type':'application/json'
-                        }
-                    })
-                    const res = await req.json()
-                    console.log(res)
-                    setLoader(false)
-                    if (res.status === 200) {
-                        setValidUrl(true)
-                    }
-                    
-                } catch (error) {
-                    console.log(error)
-                    setValidUrl(false)
-                    setLoader(false)
-                }
-            }
-            verifyEmailUrl()
-    },[params])
-    
     const [newPassword, setNewPassword] = useState()
     const [confirmPassword, setConfirmPassword] = useState()
     const [showPassword, setShowPassword] = useState()
