@@ -50,12 +50,12 @@ const PasswordReset = ({ route }) => {
             
             Toast.fire({
             icon: 'success',
-            title: 'password reset link sent to Email!'
+            title: 'password successfully reset!'
             })
 
         } catch (error) {
             setLoader(false)
-            
+
             Toast.fire({
             icon: 'error',
             title: 'error! something went wrong'
