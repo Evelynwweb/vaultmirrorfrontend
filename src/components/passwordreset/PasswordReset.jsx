@@ -3,19 +3,48 @@ import './passwordreset.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import Loader from '../Loader'
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import Swal from 'sweetalert2'
 
 
-const PasswordReset = ({route}) => {
+const PasswordReset = ({ route }) => {
+    const params = useParams()
+    const [email, setEmail] = useState(params.email)
+    
+        useEffect(() => {
+            setLoader(true)
+            const verifyEmailUrl = async()=>{
+                try {
+                    
+                    const url = `${route}/resetpassword/${params.email}`
+                    const req = await fetch(url,{
+                        headers:{
+                            'Content-Type':'application/json'
+                        }
+                    })
+                    const res = await req.json()
+                    console.log(res)
+                    setLoader(false)
+                    if (res.status === 200) {
+                        setValidUrl(true)
+                    }
+                    
+                } catch (error) {
+                    console.log(error)
+                    setValidUrl(false)
+                    setLoader(false)
+                }
+            }
+            verifyEmailUrl()
+    },[params])
+    
     const [newPassword, setNewPassword] = useState()
     const [confirmPassword, setConfirmPassword] = useState()
     const [showPassword, setShowPassword] = useState()
     const [showConfirmPassword, setShowConfirmPassword] = useState()
     const [loader, setLoader] = useState(false)
     const navigate = useNavigate()
-    const [userData, setUserData] = useState()
 
      const Toast = Swal.mixin({
             toast: true,
@@ -30,49 +59,6 @@ const PasswordReset = ({route}) => {
      })
     
 
-    useEffect(() => {
-          const getData = async () => {
-            try {
-              setLoader(true);
-        
-              // Check if a token exists
-                const token = localStorage.getItem('token');
-                console.log(token)
-              if (!token) {
-                navigate('/login');
-                return;
-              }
-        
-              // Fetch user data from the API
-              const response = await fetch(`${route}/api/getData`, {
-                headers: {
-                  'x-access-token': token,
-                  'Content-Type': 'application/json',
-                },
-              });
-        
-              // Parse the response
-              const data = await response.json();
-        
-              // Handle errors from the API
-              if (data.status === 'error') {
-                localStorage.removeItem('token'); // Clear invalid token
-                navigate('/login');
-              } else {
-                setUserData(data); // Set user data
-              }
-            } catch (error) {
-              console.error('Error fetching user data:', error);
-              navigate('/login'); // Navigate to login on failure
-            } finally {
-              setLoader(false); // Stop loader
-            }
-          };
-        
-          getData();
-    }, [navigate, route]);
-    
-
     const resetPassword = async () => {
         setLoader(true);
         try {
@@ -81,7 +67,7 @@ const PasswordReset = ({route}) => {
                 `${route}/api/resetpassword`,
                 {
                     newPassword,
-                    email:userData.email
+                    email
                 },
                 {
                   headers: { 'Content-Type': 'application/json' },

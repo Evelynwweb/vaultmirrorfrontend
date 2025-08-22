@@ -36,8 +36,8 @@ function App() {
     // duration=1200;
     }, [])
 
-    const route = 'https://vaultmirror.vercel.app'
-    // const route = 'http://localhost:5000'
+    // const route = 'https://vaultmirror.vercel.app'
+    const route = 'http://localhost:5000'
   
   return (
     <>
@@ -81,7 +81,7 @@ function App() {
             <Route path="/login" element={<Login route={route} />} />
             <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
             <Route path='/passwordreset' element={<ForgotPassword route={route}/>}/>
-            <Route path='/resetpassword' element={<PasswordReset route={route}/>}/>
+            <Route path='/resetpassword/:email' element={<PasswordReset route={route}/>}/>
           </Routes>
         </motion.div>
       </Router>
