@@ -121,6 +121,12 @@ const MobileDropdown = ({route,showStatus,closeMenu}) => {
                     <p>settings</p>
                 </div>
                 <div className="dropdown-tabs" onClick={()=>{
+                    navigate('/passwordreset')
+                }}>
+                    <AiOutlineSetting />
+                    <p>password reset</p>
+                </div>
+                <div className="dropdown-tabs" onClick={()=>{
                     navigate('/kyc')
                 }}>
                     <RiLockPasswordLine />

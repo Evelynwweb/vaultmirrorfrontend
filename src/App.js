@@ -21,6 +21,8 @@ import UserdashboardKyc from './components/userdashboardKyc/UserdashboardKyc';
 import UserdashboardLiveTrading from './components/userdashboardLiveTrading/UserdashboardLiveTrading';
 import UserdashboardTraders from './components/userdashboardTraders/UserdashboardTraders';
 import UserdashboardRanking from './components/userdashboardRanking/UserdashboardRanking'
+import ForgotPassword from './components/forgotpassword/ForgotPassword';
+import PasswordReset from './components/passwordreset/PasswordReset';
 
 function App() {
    useEffect(() => {
@@ -34,7 +36,8 @@ function App() {
     // duration=1200;
     }, [])
 
-    const route = 'https://vaultmirror.vercel.app'
+    // const route = 'https://vaultmirror.vercel.app'
+    const route = 'http://localhost:5000'
   
   return (
     <>
@@ -74,9 +77,11 @@ function App() {
             <Route path='/usercopytrade' element={<UserdashboardCopytrade route={route} />}/>
             <Route path='/traders' element={<UserdashboardTraders route={route} />}/>
             <Route path='/live-trading' element={<UserdashboardLiveTrading route={route} />}/>
-              <Route path='/kyc' element={<UserdashboardKyc route={route} />} />
-              <Route path="/login" element={<Login route={route} />} />
-              <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
+            <Route path='/kyc' element={<UserdashboardKyc route={route} />} />
+            <Route path="/login" element={<Login route={route} />} />
+            <Route path='/ranking' element={<UserdashboardRanking route={route}/>}/>
+            <Route path='/passwordreset' element={<ForgotPassword route={route}/>}/>
+            <Route path='/resetpassword' element={<PasswordReset route={route}/>}/>
           </Routes>
         </motion.div>
       </Router>
