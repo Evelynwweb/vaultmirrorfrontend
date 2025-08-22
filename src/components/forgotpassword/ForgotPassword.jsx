@@ -79,8 +79,8 @@ const ForgotPassword = ({ route }) => {
         <div className="verifyPageTextWrapper">
             <IoMdCheckmarkCircleOutline />
                 <h1>Email verification required</h1>
-              <p>click on the button below and a link to change you password would be sent to your email</p>
-          <form class="form"  onSubmit={(e)=>{
+              <p>input your valid email attached to your account below</p>
+          <form class=""  onSubmit={(e)=>{
                     e.preventDefault()
                     sendMail()
                     }}>
