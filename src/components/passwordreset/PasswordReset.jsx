@@ -45,21 +45,17 @@ const PasswordReset = ({ route }) => {
                   headers: { 'Content-Type': 'application/json' },
                 }
             );
-            const res = await req.json()
-            if (res.status = 'ok') {
-                Toast.fire({
+            setLoader(false)
+
+            
+            Toast.fire({
             icon: 'success',
             title: 'password reset link sent to Email!'
             })
-            }
-            else {
-                Toast.fire({
-            icon: 'error',
-            title: 'error! something went wrong'
-            })
-            }
 
         } catch (error) {
+            setLoader(false)
+            
             Toast.fire({
             icon: 'error',
             title: 'error! something went wrong'
