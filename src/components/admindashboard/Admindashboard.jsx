@@ -168,7 +168,7 @@ const Admindashboard = ({ route }) => {
   else{
     Toast.fire({
       icon: 'error',
-      title: `sorry, something went wrong ${res.error} `
+      title: `amount ${res.funded}, is more than users capital, something went wrong ${res.error} `
     })
   }
   }
