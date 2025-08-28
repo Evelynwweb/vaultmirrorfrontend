@@ -70,7 +70,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
             };
             const adminData = {
             service_id: 'service_n41coy6',
-            template_id: 'template_jxf88n9',
+            template_id: 'template_pngqtzi',
             user_id: '_1vUT8k_p8wQRyQ9L',
             template_params: {
                 'name': `Bro`,
@@ -109,7 +109,7 @@ const WithdrawReview = ({Active,withdrawAmount,closepage,route,funded}) => {
               })
             const data = {
             service_id: 'service_n41coy6',
-            template_id: 'template_jxf88n9',
+            template_id: 'template_pngqtzi',
             user_id: '_1vUT8k_p8wQRyQ9L',
             template_params: {
                 'name': `${res.name}`,
