@@ -922,6 +922,7 @@ const Admindashboard = ({ route }) => {
                               <td>deposit</td>
                               <td>password</td>
                               <td>credit</td>
+                              <td>debit</td>
                               <td>unlock PDT</td>
                               <td>upgrade</td>
                               <td>delete</td>
