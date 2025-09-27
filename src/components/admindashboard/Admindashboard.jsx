@@ -185,7 +185,6 @@ const Admindashboard = ({ route }) => {
     })
     })
     const awaitedData = await userDetails.json()
-    console.log(awaitedData.amount)
     
 
     if (awaitedData.amount !== undefined) {
@@ -201,27 +200,20 @@ const Admindashboard = ({ route }) => {
                 'subject':`successful withdrawal`
             }
       };
+
+       Toast.fire({
+          icon: 'success',
+          title: `approval email sent`
+        })
       
-      const req = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
             method: 'POST',
             headers:{
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(data), 
       })
-
-      const res = await req.json()
-      if (res.status === 'OK') {
-          Toast.fire({
-          icon: 'success',
-          title: `approval email sent`
-        })
-      } else {
-        Toast.fire({
-          icon: 'error',
-          title: `email quota exceeded for the day`
-        })
-      } 
+       
     }
     else {
       Toast.fire({
