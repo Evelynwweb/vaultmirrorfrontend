@@ -26,7 +26,7 @@ const Userdashboardfundaccount = ({route}) => {
   const depositOptions=[
     {
       id:1,
-      min:500,
+      min:1,
       max:1000,
       image:'/btc.png',
       method:'BTC',
@@ -34,7 +34,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:2,
-      min:500,
+      min:1,
       max:1000,
       image:'/etherium.png',
       method:'ETH',
@@ -42,7 +42,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:3,
-      min:500,
+      min:1,
       max:1000,
       image:'/tron.png',
       method:'tether(TRC20 tron) ',
@@ -50,7 +50,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:4,
-      min:500,
+      min:1,
       max:1000,
       image:'/usdc-coin.png',
       method:'USDC (Base Mainnet) ',
@@ -58,7 +58,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:5,
-      min:500,
+      min:1,
       max:1000,
       image:'/solana.png',
       method:'Solana (SOL) ',
@@ -66,7 +66,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:6,
-      min:500,
+      min:1,
       max:1000,
       image:'/dogecoin-logo.png',
       method:'Doge',
@@ -74,7 +74,7 @@ const Userdashboardfundaccount = ({route}) => {
     },
     {
       id:7,
-      min:500,
+      min:1,
       max:1000,
       image:'/xrp-icon.png',
       method:'XRP ',
